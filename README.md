@@ -1,4 +1,4 @@
-# Replace string in file action
+# GitHub action. Replace string in file
 
 This action find an replace specific string in given file.
 
