@@ -11,9 +11,6 @@ inputs:
     description: 'New string'
     required: true
     default: ''
-outputs:
-  build-id:
-    description: 'Build id'
 runs:
   using: 'docker'
   image: 'Dockerfile'

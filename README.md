@@ -1,21 +1,25 @@
-# Hello world docker action
+# Replace string in file action
 
-This action prints "Hello World" or "Hello" + the name of a person to greet to the log.
+This action find an replace specific string in given file.
 
 ## Inputs
 
-## `who-to-greet`
+## `file-path`
 
-**Required** The name of the person to greet. Default `"World"`.
+**Required** File path where changes should be done.
 
-## Outputs
+## `search`
 
-## `time`
+**Required** String that should be replaced.
 
-The time we greeted you.
+## `replace`
+
+**Required** New string.
 
 ## Example usage
 
-uses: actions/hello-world-docker-action@v2
+uses: devapro/replace-string-action@v0.0.8
 with:
-  who-to-greet: 'Mona the Octocat'
+  file-path: "project/build.gradle.kts"
+  search: "buildVersionCode = 111"
+  replace: "buildVersionCode = 222"
