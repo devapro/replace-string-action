@@ -40,4 +40,9 @@ if __name__ == '__main__':
     if sys.argv[3] == "":
         print("Replace is empty!")
         exit(1)
-    run(sys.argv[1], sys.argv[2], sys.argv[3])
+    
+    print(sys.argv[1])
+    print(sys.argv[2])
+    print(sys.argv[3])
+    
+    #run(sys.argv[1], sys.argv[2], sys.argv[3])
