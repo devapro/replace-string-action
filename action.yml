@@ -1,0 +1,23 @@
+name: 'Replace string in file'
+description: 'Find specific string in the file and replace it with another string'
+inputs:
+  file-path:
+    description: 'File path where changes should be done'
+    required: true
+  search:
+    description: 'String that should be replaced'
+    required: true
+  replace:
+    description: 'New string'
+    required: true
+    default: ''
+outputs:
+  build-id:
+    description: 'Build id'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.file-path }}
+    - ${{ inputs.search }}
+    - ${{ inputs.replace }}
