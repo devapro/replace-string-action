@@ -18,8 +18,10 @@ This action find an replace specific string in given file.
 
 ## Example usage
 
+```
 uses: devapro/replace-string-action@v0.0.8
 with:
   file-path: "project/build.gradle.kts"
   search: "buildVersionCode = 111"
   replace: "buildVersionCode = 222"
+```
