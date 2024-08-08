@@ -1,4 +1,8 @@
-name: 'Replace string in file'
+name: 'String replace action'
+author: 'devapro'
+branding:
+  icon: 'edit'
+  olor: 'green'
 description: 'Find specific string in the file and replace it with another string'
 inputs:
   file-path:
