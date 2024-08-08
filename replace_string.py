@@ -1,5 +1,4 @@
 import sys
-import os
 
 
 class ReplaceStringStep:
@@ -9,7 +8,7 @@ class ReplaceStringStep:
         self.replace = replace
 
     def process(self):
-        with open(self.file_path, 'r') as fd:
+        with open('/github/workspace/' + self.file_path, 'r') as fd:
             file_content = fd.readlines()
             for i in range(len(file_content)):
                 file_content[i] = file_content[i].replace(self.search, self.replace)
