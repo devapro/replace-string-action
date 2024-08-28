@@ -2,23 +2,28 @@ import sys
 
 
 class ReplaceStringStep:
-    def __init__(self, file_path, search, replace):
+    def __init__(self, file_path, search, replace, replace_all):
         self.file_path = file_path
         self.search = search
         self.replace = replace
+        self.replace_all = replace_all == 'true'
 
     def process(self):
         with open('/github/workspace/' + self.file_path, 'r') as fd:
             file_content = fd.readlines()
             for i in range(len(file_content)):
-                file_content[i] = file_content[i].replace(self.search, self.replace)
+                if self.search in file_content[i]:
+                    if self.replace_all:
+                        file_content[i] = self.replace
+                    else:
+                        file_content[i] = file_content[i].replace(self.search, self.replace)
             with open(self.file_path, 'w') as fr:
                 fr.writelines(file_content)
 
 
-def run(file_path, search, replace):
+def run(file_path, search, replace, replace_all):
     try:
-        string_replacer = ReplaceStringStep(file_path, search, replace)
+        string_replacer = ReplaceStringStep(file_path, search, replace, replace_all)
         string_replacer.process()
     except Exception as e:
         print(e)
@@ -41,4 +46,4 @@ if __name__ == '__main__':
         print("Replace is empty!")
         exit(1)
         
-    run(sys.argv[1], sys.argv[2], sys.argv[3])
+    run(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])

@@ -16,6 +16,10 @@ This action find an replace specific string in given file.
 
 **Required** New string.
 
+## `replace-all`
+
+**Optional** Replace whole string with new value. [true/false] (Default: false)
+
 ## Example usage
 
 uses: devapro/replace-string-action@v0.0.8
